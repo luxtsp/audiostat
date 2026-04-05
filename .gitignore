@@ -1,0 +1,6 @@
+# test
+Makefile
+# dev
+.venv
+.mypy_cache
+__pycache__

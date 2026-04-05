@@ -1,2 +1,0 @@
-winrt
-websockets
