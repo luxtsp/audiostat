@@ -23,7 +23,7 @@ Manual usage:
 ```python 3.13
 from songtracker import SongTracker
 
-# /!\ Use try/Except statement to catch OSError on winrt errors
+# /!\ Use try/Except statement to catch OSError on winrt error
 
 tracker = Songtracker()
 if tracker.get_new_session():
