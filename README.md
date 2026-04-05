@@ -6,6 +6,9 @@
 A python package for windows made to track the current song being listened to.
 
 ## usage
+```bash
+python3 -m pip install songtracker
+```
 Intended usage:
 ```python 3.13
 from songtracker import SongTracker
