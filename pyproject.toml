@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "asyncio>=4.0.0",
+    "black>=26.3.1",
     "flake8>=7.3.0",
     "mypy>=1.20.0",
     "winrt-windows-foundation>=3.2.1",

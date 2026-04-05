@@ -1,3 +1,4 @@
-from .songtracker import SongTracker
+from .songtracker import SongTracker, Song
 
-__all__ = ["SongTracker"]
+__all__ = ["SongTracker",
+           "Song"]
