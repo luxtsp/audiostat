@@ -6,7 +6,9 @@ from time import sleep
 
 
 class Song:
-    def __init__(self, title: str = None, artist: str = None) -> None:
+    def __init__(
+        self, title: str | None = None, artist: str | None = None
+    ) -> None:
         if not title or not artist:
             self.error = 1
         else:
@@ -14,14 +16,15 @@ class Song:
         self.artist = artist
         self.title = title
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"{self.title} - {self.artist}"
 
 
 class SongTracker:
     """
-    This is SongTracker, 
-    a class communicating with the winrt package and making it a 'song' object.\n
+    This is SongTracker,
+    a class communicating with the winrt package,
+    creating a 'song' object.\n
     meant to be used with SongTracker.run(function(song))
     """
 
@@ -48,10 +51,11 @@ class SongTracker:
         """
         ask MediaManager for the currently playing media
         and turns it into a song object.\n
-        song.title: str | song.artist: str | song.error: int (0 if good | 1 if error)
+        song.title: str | song.artist: str |
+        song.error: int (0 if good | 1 if error)
         """
         if not self.session:
-            self.get_new_session()
+            await self.get_new_session()
         if self.session:
             current_media = self.session.get_current_session()
             if current_media:
@@ -64,7 +68,9 @@ class SongTracker:
                     return True
         return False
 
-    async def run(self, function: Callable, check_delay: float = 2.5) -> None:
+    async def run(
+        self, function: Callable[[Song], None], check_delay: float = 2.5
+    ) -> None:
         """
         runs indefinitely and calls given function
         on song change with song type as argument.\n
